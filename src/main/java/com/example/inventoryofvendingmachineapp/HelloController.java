@@ -5,7 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class HelloController {
-
     @FXML
     private Label welcomeText;
     public Button Pistachios;
