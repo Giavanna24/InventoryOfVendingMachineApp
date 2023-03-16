@@ -37,7 +37,7 @@
             <Label layoutX="388.0" layoutY="465.0" text="Total Balance:" />
             <Label layoutX="256.0" layoutY="465.0" prefHeight="17.0" prefWidth="87.0" text="Item" />
             <Label layoutX="256.0" layoutY="487.0" prefHeight="17.0" prefWidth="70.0" text="Price" />
-            <TextField layoutX="249.0" layoutY="508.0" prefHeight="26.0" prefWidth="77.0" text="Stock" />
+            <Label layoutX="256.0" layoutY="513.0" prefHeight="17.0" prefWidth="70.0" text="Stock" />
          </children>
       </Pane>
       <TextField layoutX="383.0" layoutY="481.0" />
