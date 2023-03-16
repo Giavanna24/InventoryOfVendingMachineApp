@@ -13,7 +13,6 @@ public class HelloController {
     public Button Funyuns;
     public Button DoritosFlaminHot;
     public Button WhiteCheddarPopcorn;
-
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
