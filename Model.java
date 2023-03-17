@@ -27,4 +27,31 @@ public class Model {
 
     public void setStock(int stock) {Stock = stock;}
 
+    static void readAllData() {
+        Scanner sc = null;
+        try{
+            File file = new File("Vending Machine Data");
+            sc = new Scanner(file);
+            String line;
+            while (sc.hasNextLine()) {
+                line = sc.nextLine();
+                System.out.println(line);
+                Scanner lineScanner = new Scanner(line);
+                lineScanner.useDelimiter("\t");
+                String name = lineScanner.next();
+                String Item = lineScanner.next();
+                int Stock = lineScanner.nextInt();
+                int Price = lineScanner.nextInt();
+                new VendingMachineItem (Item, Stock, Price);
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        finally {
+            if (sc != null) sc.close();
+        }
+    }
+
 }
