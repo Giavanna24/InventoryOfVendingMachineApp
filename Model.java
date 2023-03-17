@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Model {
 
+
     public String Item;
     public int Price;
     public int Stock;
