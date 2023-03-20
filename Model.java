@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Model {
-
-
     public String Item;
     public int Price;
     public int Stock;
@@ -39,12 +37,13 @@ public class Model {
                 System.out.println(line);
                 Scanner lineScanner = new Scanner(line);
                 lineScanner.useDelimiter("\t");
-                String name = lineScanner.next();
                 String Item = lineScanner.next();
                 int Stock = lineScanner.nextInt();
                 int Price = lineScanner.nextInt();
                 new VendingMachineItem (Item, Stock, Price);
+
             }
+
         }
         catch (FileNotFoundException e)
         {
