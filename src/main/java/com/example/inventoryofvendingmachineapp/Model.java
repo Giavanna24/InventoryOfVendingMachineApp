@@ -41,6 +41,7 @@ public class Model {
                 int Stock = lineScanner.nextInt();
                 int Price = lineScanner.nextInt();
                 new VendingMachineItem (Item, Stock, Price);
+                System.out.println("it worked");
 
             }
 
