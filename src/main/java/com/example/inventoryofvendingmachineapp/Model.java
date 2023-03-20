@@ -1,3 +1,4 @@
+package com.example.inventoryofvendingmachineapp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +9,7 @@ public class Model {
     public int Price;
     public int Stock;
 
-    public Inventory(String Item, int price, int Stock) {
+    public Model(String Item, int price, int Stock) {
         this.Item = Item;
         this.Price = Price;
         this.Stock = Stock;
@@ -40,8 +41,8 @@ public class Model {
                 String Item = lineScanner.next();
                 int Stock = lineScanner.nextInt();
                 int Price = lineScanner.nextInt();
-                new VendingMachineItem (Item, Stock, Price);
-                System.out.println("it worked");
+                new Model (Item, Stock, Price);
+
 
             }
 

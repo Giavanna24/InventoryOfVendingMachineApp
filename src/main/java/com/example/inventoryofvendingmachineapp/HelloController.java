@@ -3,10 +3,6 @@ package com.example.inventoryofvendingmachineapp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-
 public class HelloController {
 
     @FXML
@@ -23,18 +19,10 @@ public class HelloController {
     public Button Funyuns;
     public Button DoritosFlaminHot;
     public Button WhiteCheddarPopcorn;
-    public GridPane MachineGrid;
-    public Pane MachinePane;
-    public Label TitleLabel;
-    public Label InsertLabel;
-    public Label TotalLabel;
-    public Label ItemLabel;
-    public Label StockLabel;
-    public Label PriceLabel;
-    public TextField TotalField;
-    public TextField InsertField;
-    public Button CheckButton;
 
+    public void initialize(){
+        Model.readAllData();
+    }
 
     @FXML
     protected void onHelloButtonClick() {
