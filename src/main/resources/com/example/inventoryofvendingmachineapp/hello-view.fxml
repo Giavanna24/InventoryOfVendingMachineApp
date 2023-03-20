@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventoryofvendingmachineapp.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventoryofvendingmachineapp.HelloController">
    <children>
-      <GridPane gridLinesVisible="true" layoutX="75.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="435.0">
+      <GridPane fx:id="MachineGrid" gridLinesVisible="true" layoutX="75.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="435.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="147.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="143.0" />
@@ -38,22 +38,22 @@
             <Button fx:id="WhiteCheddarPopcorn" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Pane prefHeight="551.0" prefWidth="582.0">
+      <Pane fx:id="MachinePane" prefHeight="551.0" prefWidth="582.0">
          <children>
-            <Label layoutX="204.0" layoutY="14.0" prefHeight="30.0" prefWidth="192.0" text="Vending Machine">
+            <Label fx:id="TitleLabel" layoutX="204.0" layoutY="14.0" prefHeight="30.0" prefWidth="192.0" text="Vending Machine">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Button layoutX="380.0" layoutY="508.0" mnemonicParsing="false" text="Checkout" />
-            <TextField layoutX="71.0" layoutY="482.0" />
-            <Label layoutX="71.0" layoutY="465.0" text="Money Inserted:" />
-            <Label layoutX="388.0" layoutY="465.0" text="Total Balance:" />
-            <Label layoutX="256.0" layoutY="465.0" prefHeight="17.0" prefWidth="87.0" text="Item" />
-            <Label layoutX="256.0" layoutY="487.0" prefHeight="17.0" prefWidth="70.0" text="Price" />
-            <Label layoutX="256.0" layoutY="513.0" prefHeight="17.0" prefWidth="70.0" text="Stock" />
+            <Button fx:id="CheckButton" layoutX="380.0" layoutY="508.0" mnemonicParsing="false" text="Checkout" />
+            <TextField fx:id="InsertField" layoutX="71.0" layoutY="482.0" />
+            <Label fx:id="InsertLabel" layoutX="71.0" layoutY="465.0" text="Money Inserted:" />
+            <Label fx:id="TotalLabel" layoutX="388.0" layoutY="465.0" text="Total Balance:" />
+            <Label fx:id="ItemLabel" layoutX="256.0" layoutY="465.0" prefHeight="17.0" prefWidth="87.0" text="Item" />
+            <Label fx:id="PriceLabel" layoutX="256.0" layoutY="487.0" prefHeight="17.0" prefWidth="70.0" text="Price" />
+            <Label fx:id="StockLabel" layoutX="256.0" layoutY="513.0" prefHeight="17.0" prefWidth="70.0" text="Stock" />
          </children>
       </Pane>
-      <TextField layoutX="383.0" layoutY="481.0" />
+      <TextField fx:id="TotalField" layoutX="383.0" layoutY="481.0" />
    </children>
 </Pane>
