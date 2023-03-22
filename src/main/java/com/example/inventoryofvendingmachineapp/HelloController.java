@@ -3,6 +3,15 @@ package com.example.inventoryofvendingmachineapp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class HelloController {
 
     @FXML
@@ -20,8 +29,12 @@ public class HelloController {
     public Button DoritosFlaminHot;
     public Button WhiteCheddarPopcorn;
 
-    public void initialize(){
+    public void initialize() throws FileNotFoundException {
         Model.readAllData();
+    Image DoritosImage = new Image (new FileInputStream("doritos.png"));
+    ImageView DoritosView = new ImageView(DoritosImage);
+    Doritos.setGraphic(DoritosView);
+
     }
 
 public void DataToButton(){

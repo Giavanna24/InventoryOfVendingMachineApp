@@ -45,8 +45,6 @@ public class Model {
                 float Price = lineScanner.nextFloat();
                 new Model (Item, Stock, Price);
 
-
-
             }
 
         }
