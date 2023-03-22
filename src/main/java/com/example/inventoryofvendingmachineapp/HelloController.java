@@ -3,14 +3,9 @@ package com.example.inventoryofvendingmachineapp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-
 public class HelloController {
 
     @FXML
-    //Vending machine items
     private Label welcomeText;
     public Button Doritos;
     public Button FruitSnacks;
@@ -24,23 +19,16 @@ public class HelloController {
     public Button Funyuns;
     public Button DoritosFlaminHot;
     public Button WhiteCheddarPopcorn;
-    // Model elements
-    public GridPane MachineGrid;
-    public Pane MachinePane;
-    public Label TitleLabel;
-    public Label InsertLabel;
-    public Label TotalLabel;
-    public Label ItemLabel;
-    public Label StockLabel;
-    public Label PriceLabel;
-    public TextField TotalField;
-    public TextField InsertField;
-    public Button CheckButton;
 
     public void initialize(){
         Model.readAllData();
     }
 
+public void DataToButton(){
+        Doritos.setOnAction(actionEvent -> {
+
+        });
+}
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");

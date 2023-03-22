@@ -6,20 +6,22 @@ import java.util.Scanner;
 
 public class Model {
     public String Item;
-    public int Price;
     public int Stock;
+    public float Price;
 
-    public Model(String Item, int price, int Stock) {
+
+    public Model(String Item, int Stock,  float Price) {
         this.Item = Item;
-        this.Price = Price;
         this.Stock = Stock;
+        this.Price = Price;
+
     }
 
     public String getItem() {return Item;}
 
     public void setItem(String item) {Item = item;}
 
-    public int getPrice() {return Price;}
+    public float getPrice() {return Price;}
 
     public void setPrice(int price) {Price = price;}
 
@@ -40,8 +42,9 @@ public class Model {
                 lineScanner.useDelimiter("\t");
                 String Item = lineScanner.next();
                 int Stock = lineScanner.nextInt();
-                int Price = lineScanner.nextInt();
+                float Price = lineScanner.nextFloat();
                 new Model (Item, Stock, Price);
+
 
 
             }
