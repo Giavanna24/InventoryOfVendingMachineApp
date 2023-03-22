@@ -28,6 +28,17 @@ public class HelloController {
     public Button Funyuns;
     public Button DoritosFlaminHot;
     public Button WhiteCheddarPopcorn;
+    public GridPane MachineGrid;
+    public Pane MachinePane;
+    public Label TitleLabel;
+    public Label InsertLabel;
+    public Label TotalLabel;
+    public Label ItemLabel;
+    public Label StockLabel;
+    public Label PriceLabel;
+    public TextField TotalField;
+    public TextField InsertField;
+    public Button CheckButton;
 
     public void initialize() throws FileNotFoundException {
         Model.readAllData();
