@@ -24,18 +24,18 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="Doritos" mnemonicParsing="false" opacity="0.25" prefHeight="90.0" prefWidth="144.0" text="Button" />
-            <Button fx:id="FruitSnacks" mnemonicParsing="false" opacity="0.2" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="1" />
-            <Button fx:id="NatureValley" mnemonicParsing="false" opacity="0.25" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="2" />
-            <Button fx:id="Takis" mnemonicParsing="false" opacity="0.34" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.rowIndex="1" />
-            <Button fx:id="RiceKrispies" mnemonicParsing="false" opacity="0.19" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.rowIndex="2" />
-            <Button fx:id="Popcorners" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="Pistachios" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="ChocolateChippers" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="Goldfish" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="Funyuns" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.rowIndex="3" />
-            <Button fx:id="DoritosFlaminHot" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="WhiteCheddarPopcorn" mnemonicParsing="false" opacity="0.24" prefHeight="90.0" prefWidth="144.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="Doritos" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" />
+            <Button fx:id="FruitSnacks" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="1" />
+            <Button fx:id="NatureValley" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="2" />
+            <Button fx:id="Takis" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.rowIndex="1" />
+            <Button fx:id="RiceKrispies" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.rowIndex="2" />
+            <Button fx:id="Popcorners" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="Pistachios" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="ChocolateChippers" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="Goldfish" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="Funyuns" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.rowIndex="3" />
+            <Button fx:id="DoritosFlaminHot" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="WhiteCheddarPopcorn" mnemonicParsing="false" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Pane fx:id="MachinePane" prefHeight="551.0" prefWidth="582.0">
