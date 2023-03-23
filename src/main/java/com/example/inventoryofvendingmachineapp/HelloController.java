@@ -4,16 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 public class HelloController {
-
     @FXML
     private Label welcomeText;
     public Button Doritos;
@@ -40,17 +34,15 @@ public class HelloController {
     public TextField InsertField;
     public Button CheckButton;
 
-    public void initialize() throws FileNotFoundException {
+    public void initialize(){
         Model.readAllData();
-    Image DoritosImage = new Image (new FileInputStream("doritos.png"));
-    ImageView DoritosView = new ImageView(DoritosImage);
-    Doritos.setGraphic(DoritosView);
-
     }
 
 public void DataToButton(){
         Doritos.setOnAction(actionEvent -> {
-
+            ItemLabel.setText(ItemLabel.getText());
+            ItemLabel.setText(StockLabel.getText());
+            ItemLabel.setText(PriceLabel.getText());
         });
 }
     @FXML

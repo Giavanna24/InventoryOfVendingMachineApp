@@ -2,9 +2,12 @@ package com.example.inventoryofvendingmachineapp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Model {
+
+    public static ArrayList<Model> allSnacks = new ArrayList<>();
     public String Item;
     public int Stock;
     public float Price;
@@ -16,6 +19,10 @@ public class Model {
         this.Price = Price;
 
     }
+
+    public static ArrayList<Model> getAllSnacks() {return allSnacks;}
+
+    public static void setAllSnacks(ArrayList<Model> allSnacks) {Model.allSnacks = allSnacks;}
 
     public String getItem() {return Item;}
 
