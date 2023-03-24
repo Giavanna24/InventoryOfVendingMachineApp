@@ -104,6 +104,7 @@ public class HelloController {
     }
 
 public void DataToButton(){
+
        // Doritos.setOnAction(actionEvent -> {
            // ItemLabel.setText(ItemLabel.getText());
             //ItemLabel.setText(StockLabel.getText());
