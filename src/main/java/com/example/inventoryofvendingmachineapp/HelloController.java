@@ -9,8 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-import java.io.*;
-import java.util.ArrayList;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class HelloController {
     @FXML
@@ -41,7 +41,6 @@ public class HelloController {
 
     public void initialize() throws FileNotFoundException {
         Model.readAllData();
-        restoreOrReadData();
     //Doritos
     Image DoritosImage = new Image (new FileInputStream("doritos.png"));
     ImageView DoritosView = new ImageView(DoritosImage);
@@ -103,29 +102,13 @@ public class HelloController {
     WhiteCheddarPopcornView.setFitWidth(144); WhiteCheddarPopcornView.setFitHeight(90); WhiteCheddarPopcornView.setPreserveRatio(true);
     WhiteCheddarPopcorn.setGraphic(WhiteCheddarPopcornView);
     }
-    public void saveData() throws Exception {
-        FileOutputStream fileOut = new FileOutputStream("SavedSnacks");
-        ObjectOutputStream out = new ObjectOutputStream(fileOut);
-        out.close();
-        fileOut.close();
-    }
-    public void restoreOrReadData() {
-        try {
-            FileInputStream fileIn = new FileInputStream("SavedSnacks");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            Model.setAllSnacks((ArrayList<Model>) in.readObject());
-            in.close();
-            fileIn.close();
-        } catch (Exception exception) {
-            Model.readAllData();
-        }
-    }
+
 public void DataToButton(){
-        Doritos.setOnAction(actionEvent -> {
-            ItemLabel.setText(ItemLabel.getText());
-            ItemLabel.setText(StockLabel.getText());
-            ItemLabel.setText(PriceLabel.getText());
-        });
+       // Doritos.setOnAction(actionEvent -> {
+           // ItemLabel.setText(ItemLabel.getText());
+            //ItemLabel.setText(StockLabel.getText());
+           // ItemLabel.setText(PriceLabel.getText());
+       // });
 }
     @FXML
     protected void onHelloButtonClick() {
