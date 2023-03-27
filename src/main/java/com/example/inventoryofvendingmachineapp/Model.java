@@ -17,7 +17,7 @@ public class Model {
         this.Item = Item;
         this.Stock = Stock;
         this.Price = Price;
-
+        allSnacks.add(this);
     }
 
     public static ArrayList<Model> getAllSnacks() {return allSnacks;}

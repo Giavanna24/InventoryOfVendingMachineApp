@@ -1,5 +1,6 @@
 package com.example.inventoryofvendingmachineapp;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -40,6 +41,8 @@ public class HelloController {
     public Button CheckButton;
 
     public void initialize() throws FileNotFoundException {
+        Model.readAllData();
+        System.out.println(Model.getAllSnacks());
     restoreOrReadData();
     Model.readAllData();
     //Doritos
@@ -103,6 +106,127 @@ public class HelloController {
     WhiteCheddarPopcornView.setFitWidth(144); WhiteCheddarPopcornView.setFitHeight(90); WhiteCheddarPopcornView.setPreserveRatio(true);
     WhiteCheddarPopcorn.setGraphic(WhiteCheddarPopcornView);
     }
+
+public void DataToButton(Event event) {
+
+        String dataName;
+        int dataStock;
+        float dataPrice;
+
+        if (event.getSource() == Doritos) {
+            dataName = Model.getAllSnacks().get(0).getItem();
+            dataStock = Model.getAllSnacks().get(0).getStock();
+            dataPrice = Model.getAllSnacks().get(0).getPrice();
+
+            ItemLabel.setText(" Item: " + dataName);
+            StockLabel.setText("Stock: " + String.valueOf(dataStock));
+            PriceLabel.setText("Price: $" + dataPrice);
+        }
+
+        if (event.getSource() == FruitSnacks) {
+            dataName = Model.getAllSnacks().get(1).getItem();
+            dataStock = Model.getAllSnacks().get(1).getStock();
+            dataPrice = Model.getAllSnacks().get(1).getPrice();
+
+            ItemLabel.setText(" Item: " + dataName);
+            StockLabel.setText("Stock: " + String.valueOf(dataStock));
+            PriceLabel.setText("Price: $" + dataPrice);
+        }
+
+     if (event.getSource() == NatureValley) {
+        dataName = Model.getAllSnacks().get(2).getItem();
+        dataStock = Model.getAllSnacks().get(2).getStock();
+        dataPrice = Model.getAllSnacks().get(2).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+        }
+
+    if (event.getSource() == Takis) {
+        dataName = Model.getAllSnacks().get(3).getItem();
+        dataStock = Model.getAllSnacks().get(3).getStock();
+        dataPrice = Model.getAllSnacks().get(3).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == Popcorners) {
+        dataName = Model.getAllSnacks().get(4).getItem();
+        dataStock = Model.getAllSnacks().get(4).getStock();
+        dataPrice = Model.getAllSnacks().get(4).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == Pistachios) {
+        dataName = Model.getAllSnacks().get(5).getItem();
+        dataStock = Model.getAllSnacks().get(5).getStock();
+        dataPrice = Model.getAllSnacks().get(5).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == RiceKrispies) {
+        dataName = Model.getAllSnacks().get(6).getItem();
+        dataStock = Model.getAllSnacks().get(6).getStock();
+        dataPrice = Model.getAllSnacks().get(6).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == Goldfish) {
+        dataName = Model.getAllSnacks().get(7).getItem();
+        dataStock = Model.getAllSnacks().get(7).getStock();
+        dataPrice = Model.getAllSnacks().get(7).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == ChocolateChippers) {
+        dataName = Model.getAllSnacks().get(8).getItem();
+        dataStock = Model.getAllSnacks().get(8).getStock();
+        dataPrice = Model.getAllSnacks().get(8).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == Funyuns) {
+        dataName = Model.getAllSnacks().get(9).getItem();
+        dataStock = Model.getAllSnacks().get(9).getStock();
+        dataPrice = Model.getAllSnacks().get(9).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == DoritosFlaminHot) {
+        dataName = Model.getAllSnacks().get(10).getItem();
+        dataStock = Model.getAllSnacks().get(10).getStock();
+        dataPrice = Model.getAllSnacks().get(10).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+    }
+    if (event.getSource() == WhiteCheddarPopcorn) {
+        dataName = Model.getAllSnacks().get(11).getItem();
+        dataStock = Model.getAllSnacks().get(11).getStock();
+        dataPrice = Model.getAllSnacks().get(11).getPrice();
+
+        ItemLabel.setText(" Item: " + dataName);
+        StockLabel.setText("Stock: " + String.valueOf(dataStock));
+        PriceLabel.setText("Price: $" + dataPrice);
+        }
+    }
+
+
     public void saveData() throws Exception {
         FileOutputStream fileOut = new FileOutputStream("SavedSnacks");
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -120,14 +244,7 @@ public class HelloController {
             Model.readAllData();
         }
     }
-public void DataToButton(){
 
-       // Doritos.setOnAction(actionEvent -> {
-           // ItemLabel.setText(ItemLabel.getText());
-            //ItemLabel.setText(StockLabel.getText());
-           // ItemLabel.setText(PriceLabel.getText());
-       // });
-}
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
