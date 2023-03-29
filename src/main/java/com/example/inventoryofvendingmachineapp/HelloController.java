@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
@@ -229,7 +230,11 @@ public void DataToButton(Event event) {
         }
     }
 
-
+    public void DoubleClick (MouseEvent event) {
+        if (event.getClickCount() == 2) {
+            TitleLabel.setText("Double click works");
+        }
+    }
     public void saveData() throws Exception {
         FileOutputStream fileOut = new FileOutputStream("SavedSnacks");
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
