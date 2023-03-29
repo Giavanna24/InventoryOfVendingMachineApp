@@ -14,6 +14,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class HelloController {
+
+    public  ArrayList<HelloController> customerSelectedItems  = new ArrayList<>();
+
     @FXML
     private Label welcomeText;
     public Button Doritos;

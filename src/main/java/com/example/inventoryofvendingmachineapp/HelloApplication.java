@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
         stage.show();
     }
     public void stop() throws Exception {
-      //  myController.saveData();
+        myController.saveData();
     }
     public static void main(String[] args) {
         launch();
