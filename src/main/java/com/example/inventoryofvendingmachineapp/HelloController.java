@@ -111,12 +111,17 @@ public class HelloController {
     WhiteCheddarPopcorn.setGraphic(WhiteCheddarPopcornView);
     }
 
-public void DataToButton(Event event) {
-
+public void DataToButton(MouseEvent event) {
         String dataName;
         int dataStock;
         float dataPrice;
 
+
+    if (event.getClickCount() == 2) {
+        TitleLabel.setText("Double click works");
+
+        return;
+    }
         if (event.getSource() == Doritos) {
             dataName = Model.getAllSnacks().get(0).getItem();
             dataStock = Model.getAllSnacks().get(0).getStock();
@@ -227,12 +232,6 @@ public void DataToButton(Event event) {
         ItemLabel.setText(" Item: " + dataName);
         StockLabel.setText("Stock: " + String.valueOf(dataStock));
         PriceLabel.setText("Price: $" + dataPrice);
-        }
-    }
-
-    public void DoubleClick (MouseEvent event) {
-        if (event.getClickCount() == 2) {
-            TitleLabel.setText("Double click works");
         }
     }
     public void saveData() throws Exception {
