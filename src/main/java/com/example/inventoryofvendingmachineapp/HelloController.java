@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class HelloController {
 
-    public  ArrayList<HelloController> customerSelectedItems  = new ArrayList<>();
+    public  ArrayList<Model> customerSelectedItems  = new ArrayList<>();
 
     @FXML
     private Label welcomeText;
@@ -130,6 +130,15 @@ public void DataToButton(MouseEvent event) {
             ItemLabel.setText(" Item: " + dataName);
             StockLabel.setText("Stock: " + String.valueOf(dataStock));
             PriceLabel.setText("Price: $" + dataPrice);
+
+            // Create a ChosenItem object
+            Model chosenItem = new Model(dataName, dataPrice);
+            // Add it to the ALLChosenItems arraylist
+            customerSelectedItems.add(chosenItem);
+           // String dataPrice = Float.toString(dataPrice);
+            //  TotalField.getText(chosenItem.());
+            // Update the TotalBalance
+
         }
 
         if (event.getSource() == FruitSnacks) {
@@ -239,6 +248,11 @@ public void DataToButton(MouseEvent event) {
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.close();
         fileOut.close();
+    }
+    public void InsertMoney(){
+        String MoneyInserted = InsertField.getText();
+        float Inserted = Float.parseFloat(MoneyInserted);
+        System.out.println(Inserted);
     }
     public void restoreOrReadData() {
         try {

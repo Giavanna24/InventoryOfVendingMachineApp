@@ -20,7 +20,13 @@ public class Model {
         allSnacks.add(this);
     }
 
-    public static ArrayList<Model> getAllSnacks() {return allSnacks;}
+    public Model(String Item, float Price) {
+        this.Item = Item;
+        this.Price = Price;
+    }
+
+
+        public static ArrayList<Model> getAllSnacks() {return allSnacks;}
 
     public static void setAllSnacks(ArrayList<Model> allSnacks) {Model.allSnacks = allSnacks;}
 
