@@ -26,7 +26,7 @@ public class Model {
     }
 
 
-        public static ArrayList<Model> getAllSnacks() {return allSnacks;}
+    public static ArrayList<Model> getAllSnacks() {return allSnacks;}
 
     public static void setAllSnacks(ArrayList<Model> allSnacks) {Model.allSnacks = allSnacks;}
 

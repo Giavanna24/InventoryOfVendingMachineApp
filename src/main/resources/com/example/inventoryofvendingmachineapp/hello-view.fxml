@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventoryofvendingmachineapp.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventoryofvendingmachineapp.HelloController">
    <children>
       <Pane fx:id="MachinePane" prefHeight="551.0" prefWidth="582.0">
          <children>
@@ -18,7 +18,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <Button fx:id="CheckButton" layoutX="380.0" layoutY="508.0" mnemonicParsing="false" text="Checkout" />
+            <Button fx:id="CheckButton" layoutX="380.0" layoutY="508.0" mnemonicParsing="false" onAction="#Checkout" text="Checkout" />
             <TextField fx:id="InsertField" layoutX="71.0" layoutY="482.0" onAction="#InsertMoney" />
             <Label fx:id="InsertLabel" layoutX="71.0" layoutY="465.0" text="Money Inserted:" />
             <Label fx:id="TotalLabel" layoutX="388.0" layoutY="465.0" text="Total Balance:" />
