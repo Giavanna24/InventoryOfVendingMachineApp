@@ -54,6 +54,6 @@
             <Button fx:id="WhiteCheddarPopcorn" mnemonicParsing="false" onMouseClicked="#DataToButton" prefHeight="90.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <TextField fx:id="TotalField" disable="true" layoutX="383.0" layoutY="481.0" />
+      <TextField fx:id="TotalField" editable="false" layoutX="383.0" layoutY="481.0" />
    </children>
 </Pane>

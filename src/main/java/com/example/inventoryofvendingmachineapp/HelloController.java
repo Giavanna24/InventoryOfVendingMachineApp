@@ -43,6 +43,7 @@ public class HelloController {
     public TextField TotalField;
     public TextField InsertField;
     public Button CheckButton;
+    float CurrentTotal = 0;
 
     public void initialize() throws FileNotFoundException {
         Model.readAllData();
@@ -112,16 +113,10 @@ public class HelloController {
     }
 
 public void DataToButton(MouseEvent event) {
-        String dataName;
-        int dataStock;
-        float dataPrice;
+        String dataName = null;
+        int dataStock = 0;
+        float dataPrice = 0.0f;
 
-
-    if (event.getClickCount() == 2) {
-        TitleLabel.setText("Double click works");
-
-        return;
-    }
         if (event.getSource() == Doritos) {
             dataName = Model.getAllSnacks().get(0).getItem();
             dataStock = Model.getAllSnacks().get(0).getStock();
@@ -130,14 +125,6 @@ public void DataToButton(MouseEvent event) {
             ItemLabel.setText(" Item: " + dataName);
             StockLabel.setText("Stock: " + String.valueOf(dataStock));
             PriceLabel.setText("Price: $" + dataPrice);
-
-            // Create a ChosenItem object
-            Model chosenItem = new Model(dataName, dataPrice);
-            // Add it to the ALLChosenItems arraylist
-            customerSelectedItems.add(chosenItem);
-           // String dataPrice = Float.toString(dataPrice);
-            //  TotalField.getText(chosenItem.());
-            // Update the TotalBalance
 
         }
 
@@ -241,6 +228,15 @@ public void DataToButton(MouseEvent event) {
         ItemLabel.setText(" Item: " + dataName);
         StockLabel.setText("Stock: " + String.valueOf(dataStock));
         PriceLabel.setText("Price: $" + dataPrice);
+        }
+    if (event.getClickCount() == 2) {
+        TitleLabel.setText("Double click works");
+        Model chosenItem = new Model(dataName, dataPrice);
+        customerSelectedItems.add(chosenItem);
+        System.out.println(chosenItem);
+        CurrentTotal = CurrentTotal + dataPrice;
+       // float CurrentTotal = Float.parseFloat(Total);
+        TotalField.setText(String.valueOf(CurrentTotal));
         }
     }
     public void saveData() throws Exception {
