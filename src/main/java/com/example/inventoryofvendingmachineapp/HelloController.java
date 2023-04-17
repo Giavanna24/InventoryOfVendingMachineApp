@@ -228,11 +228,11 @@ public void DataToButton(MouseEvent event) {
         PriceLabel.setText("Price: $" + dataPrice);
         }
     if (event.getClickCount() == 2) {
-        TitleLabel.setText("Double click works");
         Model chosenItem = new Model(dataName, dataPrice);
         customerSelectedItems.add(chosenItem);
         System.out.println(chosenItem);
         CurrentTotal = CurrentTotal + dataPrice;
+       // float CurrentTotal = Float.parseFloat(Total);
         TotalField.setText(String.valueOf(CurrentTotal));
         }
     }
@@ -251,20 +251,42 @@ public void DataToButton(MouseEvent event) {
     }
 
     public void Checkout() {
-        float totalCost = CurrentTotal;
-        String MoneyInserted = InsertField.getText();
-        float Inserted = Float.parseFloat(MoneyInserted);
-        if (Inserted >= totalCost) {
-            Inserted = Inserted - totalCost;
-            totalCost = 0;
-        String NewBalance = String.valueOf(Inserted);
-        InsertField.setText(NewBalance);
-        String NewTotal = String.valueOf(totalCost);
-        TotalField.setText(NewTotal);
-        } else {
-            TotalLabel.setText("Not enough money!");
+        for (Model eachSelectedItem : customerSelectedItems) {
+            eachSelectedItem = Model.getAllSnacks().get(1);
+            int currentNum = eachSelectedItem.getStock();
+            if (currentNum >= 0) {
+                eachSelectedItem.setStock(currentNum - 1);
+                System.out.println(currentNum);
+                StockLabel.setText("Stock: " + String.valueOf(currentNum));
+            } else {
+                StockLabel.setText("Out Of Stock");
+                //diasble item if stock is 0
+            }
+            //checkout stock goes past 0
+            // checkout clear items and stock
+            // shifting around to different items has different stocks by hitting checkout it brings the stock to the first items stock -1
+
+            // customerSelectedItems.clear();
+            float totalCost = CurrentTotal;
+            String MoneyInserted = InsertField.getText();
+            float Inserted = Float.parseFloat(MoneyInserted);
+            if (Inserted >= totalCost) {
+                Inserted = Inserted - totalCost;
+                totalCost = 0;
+                String NewBalance = String.valueOf(Inserted);
+                InsertField.setText(NewBalance);
+                String NewTotal = String.valueOf(totalCost);
+                TotalField.setText(NewTotal);
+            } else {
+                TotalLabel.setText("Not enough money!");
+            }
+            //checkout stock goes past 0
+            // checkout clear items and stock
+            // shifting around to different items has different stocks by hitting checkout it brings the stock to the first items stock -1
         }
+        // customerSelectedItems.clear();
     }
+
     public void restoreOrReadData() {
         try {
             FileInputStream fileIn = new FileInputStream("SavedSnacks");

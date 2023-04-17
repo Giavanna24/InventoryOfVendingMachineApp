@@ -24,7 +24,7 @@
             <Label fx:id="TotalLabel" layoutX="388.0" layoutY="465.0" text="Total Balance:" />
             <Label fx:id="ItemLabel" layoutX="256.0" layoutY="465.0" prefHeight="17.0" prefWidth="87.0" text="Item" />
             <Label fx:id="PriceLabel" layoutX="256.0" layoutY="487.0" prefHeight="17.0" prefWidth="70.0" text="Price" />
-            <Label fx:id="StockLabel" layoutX="256.0" layoutY="513.0" prefHeight="17.0" prefWidth="70.0" text="Stock" />
+            <Label fx:id="StockLabel" layoutX="256.0" layoutY="513.0" prefHeight="17.0" prefWidth="101.0" text="Stock" />
          </children>
       </Pane>
       <GridPane fx:id="MachineGrid" gridLinesVisible="true" layoutX="75.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="435.0">
