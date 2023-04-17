@@ -233,7 +233,6 @@ public void DataToButton(MouseEvent event) {
         customerSelectedItems.add(chosenItem);
         System.out.println(chosenItem);
         CurrentTotal = CurrentTotal + dataPrice;
-       // float CurrentTotal = Float.parseFloat(Total);
         TotalField.setText(String.valueOf(CurrentTotal));
         }
     }
@@ -251,10 +250,21 @@ public void DataToButton(MouseEvent event) {
         System.out.println(Inserted);
     }
 
-    public void Checkout(){
-
+    public void Checkout() {
+        float totalCost = CurrentTotal;
+        String MoneyInserted = InsertField.getText();
+        float Inserted = Float.parseFloat(MoneyInserted);
+        if (Inserted >= totalCost) {
+            Inserted = Inserted - totalCost;
+            totalCost = 0;
+        String NewBalance = String.valueOf(Inserted);
+        InsertField.setText(NewBalance);
+        String NewTotal = String.valueOf(totalCost);
+        TotalField.setText(NewTotal);
+        } else {
+            TotalLabel.setText("Not enough money!");
+        }
     }
-
     public void restoreOrReadData() {
         try {
             FileInputStream fileIn = new FileInputStream("SavedSnacks");
