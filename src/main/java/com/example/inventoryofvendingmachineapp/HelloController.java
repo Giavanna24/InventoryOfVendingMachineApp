@@ -44,11 +44,9 @@ public class HelloController {
     float CurrentTotal = 0;
 
     public void initialize() throws FileNotFoundException {
-        Model.readAllData();
-        System.out.println(Model.getAllSnacks());
     restoreOrReadData();
-    Model.readAllData();
-    //Doritos
+        System.out.println(Model.getAllSnacks());
+        //Doritos
     Image DoritosImage = new Image (new FileInputStream("doritos.png"));
     ImageView DoritosView = new ImageView(DoritosImage);
     DoritosView.setFitWidth(144); DoritosView.setFitHeight(90); DoritosView.setPreserveRatio(true);
@@ -240,6 +238,7 @@ public void DataToButton(MouseEvent event) {
     public void saveData() throws Exception {
         FileOutputStream fileOut = new FileOutputStream("SavedSnacks");
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        out.writeObject(Model.getAllSnacks());
         out.close();
         fileOut.close();
     }
@@ -251,6 +250,18 @@ public void DataToButton(MouseEvent event) {
     }
 
     public void Checkout() {
+        System.out.println("BEFORE CHECKOUT:");
+        System.out.println(Model.getAllSnacks());
+        System.out.println("BEFORE CHECKOUT selected:");
+        System.out.println(customerSelectedItems);
+
+        String MoneyInserted = InsertField.getText();
+        if (MoneyInserted.equalsIgnoreCase("")) {
+            return;
+        }
+
+
+            // doesnt work to decrease stock anymore
         for (Model eachSelectedItem : customerSelectedItems) {
             Model originalModel = null;
             // match eachSelectedItem to its original Model
@@ -262,9 +273,9 @@ public void DataToButton(MouseEvent event) {
 
             int currentNum = originalModel.getStock();
             if (currentNum >= 0) {
-                eachSelectedItem.setStock(currentNum - 1);
+                originalModel.setStock(currentNum - 1);
                 System.out.println(currentNum);
-                StockLabel.setText("Stock: " + currentNum);
+                StockLabel.setText("Stock: " + (currentNum-1));
             } else {
                 StockLabel.setText("Out Of Stock");
             }
@@ -273,8 +284,6 @@ public void DataToButton(MouseEvent event) {
             // shifting around to different items has different stocks by hitting checkout it brings the stock to the first items stock -1
 
             float totalCost = CurrentTotal;
-            String MoneyInserted = InsertField.getText();
-            if (MoneyInserted != null) {
                 float Inserted = Float.parseFloat(MoneyInserted);
                 if (Inserted >= totalCost) {
                     Inserted = Inserted - totalCost;
@@ -286,9 +295,13 @@ public void DataToButton(MouseEvent event) {
                 } else {
                     TotalLabel.setText("Not enough money!");
                 }
-            }
+
         }
-       // customerSelectedItems.clear();
+        CurrentTotal = 0;
+        customerSelectedItems.clear();
+
+        System.out.println("AFTER CHECKOUT:");
+        System.out.println(Model.getAllSnacks());
     }
 
     public void restoreOrReadData() {

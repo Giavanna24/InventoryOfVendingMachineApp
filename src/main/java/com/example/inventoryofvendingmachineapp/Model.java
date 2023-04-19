@@ -2,10 +2,11 @@ package com.example.inventoryofvendingmachineapp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Model {
+public class Model implements Serializable {
 
     public static ArrayList<Model> allSnacks = new ArrayList<>();
     public String Item;
@@ -70,4 +71,10 @@ public class Model {
         }
     }
 
+    public String toString() {
+        String description = Item + " ";
+        description = description + Stock + " ";
+        description = description + Price;
+        return description;
+    }
 }
